@@ -1,0 +1,128 @@
+Build REST API using Spring 
+You can use Derby for DB and you must use JPA to map objects to DB
+API endpoints should accept json payload and return json payload and return proper HTTP status. Try to use proper annotation and minimum code.
+Project should be a build in maven and do send instruction file containing steps to execute your code.
+
+note
+----
+* add junit test case wit 70% code coverage.
+* configure your application with mySql DB.
+* Upload code to gitHub and send us the public link.
+
+Following should be the Table Structure.
+Order
+	orderId(PK)
+	orderDate
+	orderStatus
+	collection of Items
+	
+Item
+	itemId(PK)
+	orderId(FK)
+	itemName
+	itemUnitPrice
+	itemQuantity
+	
+
+Create following API endpoints.
+1. Create New Orders 
+
+POST - order/create	
+[
+	{
+		"orderDate" : "",
+		"items" :[
+			{	"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			},
+			{
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			}
+		]
+	},
+	{
+		"orderDate" : "",
+		"items" :[
+			{
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			},
+			{
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			}
+		]
+	}
+]
+
+2. Get Order by ID
+
+GET - order/{order_id}
+{
+	"orderId" : "",
+	"orderDate" : "",
+	"orderStatus" : "New",
+	"items" :[
+		{
+			"itemId" : "",
+			"itemName" :"",
+			"itemUnitPrice" : "",
+			"itemQuantity" : 4
+		},
+		{
+			"itemId" : "",
+			"itemName" :"",
+			"itemUnitPrice" : "",
+			"itemQuantity" : 4
+		}
+	]
+}
+
+3. Get all orders
+
+GET - orders
+[
+	{
+		"orderId" : "",
+		"orderDate" : "",
+		"orderStatus" : "New",
+		"items" :[
+			{
+				"itemId" : "",
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			},
+			{
+				"itemId" : "",
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			}
+		]
+	},
+	{
+		"orderId" : "",
+		"orderDate" : "",
+		"orderStatus" : "New",
+		"items" :[
+			{
+				"itemId" : "",
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			},
+			{
+				"itemId" : "",
+				"itemName" :"",
+				"itemUnitPrice" : "",
+				"itemQuantity" : 4
+			}
+		]
+	}
+]
